@@ -1,6 +1,5 @@
-package ru.sberbank.sbernet.segmenter.amazonroutines.adapters;
+package receiver.adapters;
 
-import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import ru.sberbank.sbernet.segmenter.amazonroutines.adapters.interf.IAwsAdapter;
+import receiver.adapters.interf.IAwsAdapter;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
@@ -21,11 +20,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @Service
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor
 @Slf4j
-@Profile("dev")
+@Profile("test")
 public class AwsAdapterLocal implements IAwsAdapter {
-    @Value("${server.local.url}")
+    @Value("${server.url}")
     private String LOCAL_URL;
     @Value("${server.local.storage.save}")
     private String STORAGE_PATH;
@@ -37,7 +36,7 @@ public class AwsAdapterLocal implements IAwsAdapter {
             return new URL(this.LOCAL_URL + fileName);
         } catch (IOException var6) {
             log.error("Failed save file to locale storage with name {}", fileName);
-            throw new CephException(var6.getMessage());
+            return null;
         }
     }
 

@@ -1,4 +1,4 @@
-package ru.sberbank.sbernet.segmenter.amazonroutines.adapters;
+package receiver.adapters;
 
 public class CephException extends RuntimeException {
     public CephException() {

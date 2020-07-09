@@ -1,4 +1,4 @@
-package ru.sberbank.sbernet.segmenter.amazonroutines.configs;
+package receiver.configs;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;

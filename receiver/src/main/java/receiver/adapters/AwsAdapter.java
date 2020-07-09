@@ -1,4 +1,4 @@
-package ru.sberbank.sbernet.segmenter.amazonroutines.adapters;
+package receiver.adapters;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import ru.sberbank.sbernet.segmenter.amazonroutines.adapters.interf.IAwsAdapter;
+import receiver.adapters.interf.IAwsAdapter;
 
 import java.io.InputStream;
 import java.net.URL;
 
 @Service
 @Slf4j
-@Profile("prod")
+@Profile("dev")
 public class AwsAdapter implements IAwsAdapter {
     private final String bucketName;
     private final AmazonS3Client amazonS3Client;

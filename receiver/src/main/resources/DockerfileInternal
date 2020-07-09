@@ -1,0 +1,18 @@
+FROM ${docker.registry}/base/redhat/redhat-openjdk-18/openjdk18-openshift:latest
+
+WORKDIR /opt/app
+
+ARG JAR_FILE=./${artifactId}-${project.version}.jar
+
+COPY ${JAR_FILE} sbernet.jar
+
+ENTRYPOINT ["java","-XX:MaxRAMFraction=2","-jar",  \
+"-Dspring.profiles.active=${activeProfile}", \
+"-Dceph.bucket-name=${CEPH_BUCKET_NAME}", \
+"-Dceph.keyId=${CEPH_KEY_ID}", \
+"-Dceph.accessKey=${CEPH_ACCESS_KEY}", \
+"-Dceph.endpoint=${CEPH_ENDPOINT}", \
+"-Dceph.jaas-alias=${CEPH_JAAS}", \
+"sbernet.jar"]
+
+EXPOSE ${app.port}

@@ -1,4 +1,4 @@
-package ru.sberbank.sbernet.segmenter;
+package receiver;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;

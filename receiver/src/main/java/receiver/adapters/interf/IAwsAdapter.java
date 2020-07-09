@@ -1,4 +1,4 @@
-package ru.sberbank.sbernet.segmenter.amazonroutines.adapters.interf;
+package receiver.adapters.interf;
 
 import com.amazonaws.services.s3.model.S3Object;
 
