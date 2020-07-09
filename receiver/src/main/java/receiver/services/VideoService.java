@@ -11,7 +11,6 @@ import receiver.adapters.interf.IAwsAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.StandardCopyOption;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

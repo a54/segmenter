@@ -11,6 +11,7 @@
 
     <artifactId>receiver</artifactId>
     <properties>
+        <app.port>9085</app.port>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nexus-url>http://sbtnexus.delta.sbrf.ru:8081/nexus</nexus-url>
         <openshiftAppName>segmenter</openshiftAppName>
