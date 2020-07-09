@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <nexus-url>http://sbtnexus.delta.sbrf.ru:8081/nexus</nexus-url>
         <openshiftAppName>segmenter</openshiftAppName>
-        <docker.registry>registry.ca.sbrf.ru</docker.registry>
+        <docker.registry>registry.sigma.sbrf.ru</docker.registry>
         <activeProfile>docker</activeProfile>
         <dockerFileName>DockerfileInternal</dockerFileName>
     </properties>
